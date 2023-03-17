@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Resume</title>
+    </head>
+    <body>
+        <h1>Resume In Json Format</h1>
+        <script>
+            let myResume = {
+    Name : "Prashanthi",
+    Email : "prashanthidevs@gmail.com",
+    Phone : 123456780,
+    Degree : "B.E",
+    Location : "Sweden",
+    Company : "Google",
+    Role : "Cloud Infrasrtucture Architect",
+    Experience : "9 years",
+    State : "TamilNadu",
+    Country : "India"
+
+}
+var x = document.createElement("p");
+        for (let key in myResume) {
+        var t = document.createTextNode(key + ":" + myResume[key] + ",");
+            x.appendChild(t);
+            document.body.appendChild(x);
+
+        }
+        </script> 
+
+    </body>
+</html>
