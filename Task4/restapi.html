@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>XMLHttpRequest</title>
+    </head>
+
+    <body>
+        <script>
+            // to create an object to XHR request
+            let xhr = new XMLHttpRequest();
+
+            xhr.open("GET", "https://restcountries.com/v3.1/all", true);
+            xhr.onload = function() {
+                       let restcountries = JSON.parse(this.responseText);
+                       for(let i=0;i<restcountries.length;i++)
+                               //console.log(,restcountries[i].name.region);
+                               console.log(`countries:${restcountries[i].name.common},region:${restcountries[i].region},subregion:${restcountries[i].subregion}`)
+                            };
+
+             // send the request
+            xhr.send();
+        </script>
+    </body>
+</html>
+
+
