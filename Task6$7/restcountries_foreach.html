@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>XMLHttpRequest</title>
+    </head>
+
+    <body>
+        <script>
+            // to create an object to XHR request
+            let xhr = new XMLHttpRequest();
+
+            xhr.open("GET", "https://restcountries.com/v3.1/all", true);
+            xhr.onload = function() {
+                       
+                       let restcountries = JSON.parse(this.responseText);
+                       restcountries.forEach(element => {
+                        console.log(`Name: ${element.name.common},Capital : ${element.capital}, Flag:${element.flag}`)
+                        
+                       });
+                      
+
+
+            
+                               }
+                                     
+            // send the request
+            xhr.send();
+        </script>
+    </body>
+</html>
+
+

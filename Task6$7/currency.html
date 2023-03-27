@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>XMLHttpRequest</title>
+    </head>
+
+    <body>
+        <script>
+            // to create an object to XHR request
+            let xhr = new XMLHttpRequest();
+
+            xhr.open("GET", "https://restcountries.com/v3.1/all", true);
+            xhr.onload = function() {
+                       
+                       let restcountries = JSON.parse(this.responseText);
+                       let currencies = restcountries.filter((value) => value.currencies);
+                       console.log(currencies.filter(country => Object.keys(country.currencies).includes('USD')).map(country => country.name.common))
+                       }
+                                     
+            // send the request
+            xhr.send();
+        </script>
+    </body>
+</html>
+
+

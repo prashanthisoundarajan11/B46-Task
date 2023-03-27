@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>XMLHttpRequest</title>
+    </head>
+
+    <body>
+        <script>
+            // to create an object to XHR request
+            let xhr = new XMLHttpRequest();
+
+            xhr.open("GET", "https://restcountries.com/v3.1/all", true);
+            xhr.onload = function() {
+                       
+                       let restcountries = JSON.parse(this.responseText);
+                       let result = restcountries.filter(value => value.continents == "Asia").map(value => value.name.common)
+                       console.log(result)
+
+
+            
+                               }
+                                     
+            // send the request
+            xhr.send();
+        </script>
+    </body>
+</html>
+
+
