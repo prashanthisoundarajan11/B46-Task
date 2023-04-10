@@ -1,0 +1,19 @@
+body {
+    background-color: gray;
+}
+.fa {
+    color: blue;
+}
+.text{
+    margin: 20px 5px;
+}
+
+.box-inside{
+    background-color: white;
+    text-align: center;
+    padding: 50px 8px;
+    margin: 50px 5px;
+}
+.box{
+    padding: 60px 5px;
+}
